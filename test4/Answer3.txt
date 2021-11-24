@@ -1,0 +1,12 @@
+with open("Answer3.txt",'w') as aw3:                                      #1
+    count = len(open('test.py', 'r').readlines())                         #2
+    file = open('test.py', 'r')                                           #3
+    strList = file.readlines()                                            #4
+    maxEle = 0                                                            #5
+    for i in strList:                                                     #6
+        if len(i) > maxEle:                                               #7
+            maxEle = len(i)                                               #8
+    num = 1                                                               #9
+    for i in range(len(strList)):                                         #10
+        ele = strList[i][:-1] + ' '*(maxEle-len(strList[i])) + '#' +str(i)#11
+        aw3.write(ele+'\n'                                                #12
